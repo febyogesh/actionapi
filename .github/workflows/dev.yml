@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: public api access v1.0
 
 #trigger 
@@ -28,3 +29,28 @@ jobs:
     - name: access api data from url
       run: python read_api_data.py
     
+=======
+name: private api access
+
+on: 
+ push:
+  branches:
+    - f1
+
+jobs: 
+  private_api_access: 
+    runs-on: ubuntu-latest
+
+    steps: 
+     - name: checkout code
+       uses: actions/checkout@v2
+     
+     - name: setup python
+       uses: actions/setup-python@v6
+
+     - name: install dependencies
+       run: pip install -r requirements.txt
+
+     - name: private api access
+       run: python read_private_data.py
+>>>>>>> 517244cb82619e57e8d0aaf85c1573947603c30f
