@@ -1,0 +1,25 @@
+name: private api access
+
+on: 
+ push:
+  branches:
+    - main
+
+jobs: 
+  private_api_access: 
+    runs-on: ubuntu-latest
+
+    steps: 
+     - name: checkout code
+       uses: actions/checkout@v2
+     
+     - name: setup python
+       uses: actions/setup-python@v6
+       with:
+         python-version: "3.13"
+
+     - name: install dependencies
+       run: pip install -r requirements.txt
+
+     - name: private api access
+       run: python read_private_data.py
