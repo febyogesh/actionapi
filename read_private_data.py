@@ -9,6 +9,8 @@ headers = {
 response=requests.get(url,headers=headers)
 data=response.json()
 
-df=pd.DataFrame(data)
+result=data.get("result",[])
+
+df=pd.DataFrame(result)
 df=df[["id", "title", "original_title"]]
 print(df)
