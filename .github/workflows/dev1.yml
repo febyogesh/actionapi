@@ -1,30 +1,23 @@
-name: public api access v1.0
+name: private api access
 
-#trigger 
 on: 
  push:
   branches:
-    - dev
+    - main
 
-
-#jobs 
 jobs: 
- apidataload:    #job name
-  runs-on: ubuntu-latest     # jobs run on machine
+  private_api_access: 
+    runs-on: ubuntu-latest
 
-#each job stpes define here
-  steps:
-    - name: code Checkout
-      uses: actions/checkout@v2
-    
-    - name: setup python
-      uses: actions/setup-python@v6
-      with:
-        python-version: "3.13"
+    steps: 
+     - name: checkout code
+       uses: actions/checkout@v2
+     
+     - name: setup python
+       uses: actions/setup-python@v6
 
-    - name: install dependencies
-      run: pip install -r requirements.txt
+     - name: install dependencies
+       run: pip install -r requirements.txt
 
-    - name: access api data from url
-      run: python read_api_data.py
-    
+     - name: private api access
+       run: python read_private_data.py
