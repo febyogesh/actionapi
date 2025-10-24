@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.10' 
+      
+      - name: install dependencies
+        run: pip install -r requirements.txt
         
       - name: get data from api 
         run:  python read_api_data.py
