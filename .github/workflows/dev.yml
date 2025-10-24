@@ -9,7 +9,7 @@ on:
 
 #jobs 
 jobs: 
- apidataload:    #job name
+ api_data_load:    #job name
   runs-on: ubuntu-latest     # jobs run on machine
 
 #each job stpes define here
