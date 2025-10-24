@@ -12,5 +12,4 @@ data=response.json()
 result=data.get("result",[])
 
 df=pd.DataFrame(result)
-df=df[["id", "title", "original_title"]]
 print(df)
