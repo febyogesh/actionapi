@@ -9,7 +9,5 @@ headers = {
 response=requests.get(url,headers=headers)
 data=response.json()
 
-result=data.get("result",[])
-
-df=pd.DataFrame(result)
+df=pd.DataFrame(data)
 print(df)
