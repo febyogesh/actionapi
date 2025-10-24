@@ -1,0 +1,21 @@
+name: api pipeline
+
+on: 
+ push: 
+  branches:
+    - main
+
+jobs:
+  apidata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: python version
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10' 
+        
+      - name: print python version
+        run:  python --version
