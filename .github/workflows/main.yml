@@ -12,10 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: python version
+      - name: setup python
         uses: actions/setup-python@v6
         with:
           python-version: '3.10' 
         
-      - name: print python version
-        run:  python --version
+      - name: get data from api 
+        run:  python read_api_data.py
