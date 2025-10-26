@@ -3,11 +3,11 @@ import requests
 
 url="https://api.themoviedb.org/3/trending/movie"
 headers = {
-    "Authorization": "Bearer eyJ92pegqX6I"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTgyOGJmYWQ4ZGZiYTM1MWUyOTgyOWUyOTFhZWQ2MiIsIm5iZiI6MTY5MTQ2NjExMS4zNDgsInN1YiI6IjY0ZDFiOTdmNmQ0Yzk3MDBlYzU4ZTRiMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ptdKEYNeZGI2o8wzhlBesFF5hEdDSS5s7J92pegqX6I"
 }
 
 response=requests.get(url,headers=headers)
-data=response.json()
+jsondata=response.json()
 
-df=pd.DataFrame(data)
+df=pd.DataFrame(jsondata)
 print(df)
